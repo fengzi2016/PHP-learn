@@ -1,0 +1,37 @@
+<?php
+//1.通过post或get获取参数
+/*$name=$POST['name'];
+$id=$POST['id'];
+$school=$POST['school'];
+$sex=$POST['sex'];
+$grade=$POST['grade'];
+$idcard=$POST['idcard'];
+echo $name;<br>
+echo $school;<br>
+echo $id;*/
+include"/session/session.php";
+$student=$_POST['s'];
+var_dump($student);
+echo $student['name'];echo"<br>";
+echo $student['grade'];echo"<br>";
+echo $student['id'];echo"<br>";
+//2.连接数据库
+include"conn.php";
+//3.拼写sql
+$sql="
+insert into tb_news(idcard,school,grade,sex,name,id,room)values('".$student['idcard']."','"$student['schoolid']."','".$student['grade']."',".$student['sex'].",'".$student['name']."',".$student['id']."',1,'".$student['room']."')";
+echo $sql;
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
